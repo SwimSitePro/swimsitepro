@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    display: block; /* Hidden by default */
+}
+.form-container h2 {
+    text-align: center;
+}
+.form-container label {
+    font-weight: bold;
+}
+.form-container select,
+.form-container input[type="number"],
+.form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.time-input {
+    display: flex;
+    gap: 10px;
+}
+.time-input input {
+    width: calc(33% - 7px);
+}
