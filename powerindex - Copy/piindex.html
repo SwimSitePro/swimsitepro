@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <title>SwimSitePro</title>
+    <link rel="stylesheet" href="pistyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="piscript.js" defer></script>
+</head>
+<body>
+
+    <header style="background-color: lightblue;">
+        <h1>SwimSitePro</h1>
+        <a href="../index.html">HOME</a>
+        <a href="https://www.instagram.com/swimsitepro/" target=”_blank”>INSTAGRAM</a>
+        ///
+        <a href="https://www.swimcloud.com/" target=”_blank”>SWIMCLOUD</a>
+        <hr>
+    </header>
+
+    <div class="form-container" id="form-container">
+        <h2>Power Index Calculator [Beta]</h2>
+        <p>Please select a gender, event, and time.</p>
+        
+        <form id="power-index-form">
+            <label for="gender">Select Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+            </select>
+
+            <label for="event">Select Event:</label>
+            <select id="event" name="event" required>
+                <option value="50 Free">50 Free</option>
+                <option value="100 Free">100 Free</option>
+                <option value="200 Free">200 Free</option>
+                <option value="500 Free">500 Free</option>
+                <option value="1000 Free">1000 Free</option>
+                <option value="1650 Free">1650 Free</option>
+                <option value="100 Back">100 Back</option>
+                <option value="200 Back">200 Back</option>
+                <option value="100 Breast">100 Breast</option>
+                <option value="200 Breast">200 Breast</option>
+                <option value="100 Fly">100 Fly</option>
+                <option value="200 Fly">200 Fly</option>
+                <option value="100 IM">100 IM</option>
+                <option value="200 IM">200 IM</option>
+                <option value="400 IM">400 IM</option>
+            </select>
+            
+            <label for="time">Enter Time:</label>
+            <div class="time-input">
+                <input type="number" id="minutes" name="minutes" placeholder="MM" required min="0">
+                <input type="number" id="seconds" name="seconds" placeholder="SS" required min="0" max="59">
+                <input type="number" id="milliseconds" name="milliseconds" placeholder="mm" required min="0" max="99">
+            </div>
+            
+            <input type="submit" value="Calculate">
+        </form>
+
+        <p id="result"></p>
+    </div>
+</body>
+</html>
