@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <title>SwimSitePro</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        select {
+            width: 200px; /* Increased width for dropdowns */
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <header style="background-color: lightblue;">
+        <h1 style="color: #102a3f;">SwimSitePro</h1>
+        <a href="index.html">HOME</a>
+        <a href="https://www.instagram.com/swimsitepro/" target=”_blank”>INSTAGRAM</a>
+        ///
+        <a href="https://www.swimcloud.com/" target=”_blank”>SWIMCLOUD</a>
+        <hr>
+    </header>
+
+</head>
+<body>
+    <h1>Dynamic High School Meet Scorer</h1>
+    <div class="controls">
+        <label for="scoring-system">Select Scoring System:</label>
+        <select id="scoring-system">
+            <option value="4-lane">Dual Meet Scoring (4-lane)</option>
+            <option value="6-lane">Dual Meet Scoring (6-lane)</option>
+            <option value="8-lane">Dual Meet Scoring (8-lane)</option>
+            <option value="blue-hen">Blue Hen Conference</option>
+            <option value="diaa-state">DIAA State Scoring</option>
+        </select>
+    </div>
+
+    <h2>Individual Events</h2>
+    <table id="individual-events">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <!-- Dynamic columns will be inserted here -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows for individual events will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <h2>Relay Events</h2>
+    <table id="relay-events">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <!-- Dynamic columns will be inserted here -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows for relay events will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <h2>Team Scores</h2>
+    <table id="results">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Scores will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        const SCORING_SYSTEMS = {
+            "4-lane": { 1: 5, 2: 3, 3: 1, 4: 0 },
+            "6-lane": { 1: 6, 2: 4, 3: 3, 4: 2, 5: 1, 6: 0 },
+            "8-lane": { 1: 9, 2: 7, 3: 6, 4: 5, 5: 4, 6: 3, 7: 2, 8: 1 },
+            "blue-hen": { 1: 20, 2: 18, 3: 16, 4: 15, 5: 14, 6: 13, 7: 12, 8: 11, 9: 10, 10: 9, 11: 8, 12: 7, 13: 6, 14: 5, 15: 4, 16: 3, 17: 2, 18: 1 },
+            "diaa-state": { 1: 20, 2: 17, 3: 16, 4: 15, 5: 14, 6: 13, 7: 12, 8: 11, 9: 9, 10: 7, 11: 6, 12: 5, 13: 4, 14: 3, 15: 2, 16: 1 }
+        };
+
+        const TEAMS = {
+            "4-lane": ["-----", "Home", "Away"],
+            "6-lane": ["-----", "Home", "Away"],
+            "8-lane": ["-----", "Home", "Away"],
+            "blue-hen": ["-----", "Appoquinimink", "Brandywine", "Christiana", "Concord", "Glasgow", "John Dickinson", "McKean", "Middletown", "Mt Pleasant", "Newark", "Odessa", "William Penn"],
+            "diaa-state": ["-----", "Brandywine", "Christiana", "Concord", "John Dickinson", "Middletown", "Mt Pleasant", "Newark", "Odessa", "William Penn", "Appoquinimink", "Archmere", "Caesar Rodney", "Cape Henlopen", "Caravel", "Conrad", "Delaware Military", "Delmarva Christian", "Dover", "Indian River", "Lake Forest", "Milford", "MOT Charter", "Mt Sophia", "Newark Charter", "Padua", "Polytech", "Salesianum", "Sanford", "Seaford", "St Andrew's", "St Elizabeth", "St Marks", "Sussex Academy", "Sussex Central", "Sussex Technical", "Tatnall", "Tower Hill", "Ursuline", "Wilmington Charter", "Wilmington Friends"]
+        };
+
+        const INDIVIDUAL_EVENTS = [
+            "200 Free", "200 IM", "50 Free", "100 Fly", "100 Free", "500 Free", "100 Back", "100 Breast"
+        ];
+
+        const RELAY_EVENTS = ["200 Medley Relay", "200 Free Relay", "400 Free Relay"];
+
+        const scoringSystemSelect = document.getElementById("scoring-system");
+        const individualTable = document.querySelector("#individual-events tbody");
+        const relayTable = document.querySelector("#relay-events tbody");
+        const resultsTable = document.querySelector("#results tbody");
+
+        function createEventRows(events, table, teams, numPlaces) {
+            table.innerHTML = "";
+            events.forEach(event => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${event}</td>` +
+                    Array(numPlaces).fill().map(() => `<td><select>${teams.map(team => `<option>${team}</option>`).join("")}</select></td>`).join("");
+                table.appendChild(row);
+            });
+        }
+
+        function calculateScores() {
+            const scores = {};
+            const scoringSystem = scoringSystemSelect.value;
+            const scoring = SCORING_SYSTEMS[scoringSystem];
+
+            const calculateEventScores = (rows, isRelay) => {
+                rows.forEach(row => {
+                    row.querySelectorAll("select").forEach((select, place) => {
+                        const team = select.value;
+                        if (team !== "-----") {
+                            const points = (scoring[place + 1] || 0) * (isRelay ? 2 : 1);
+                            scores[team] = (scores[team] || 0) + points;
+                        }
+                    });
+                });
+            };
+
+            calculateEventScores([...individualTable.querySelectorAll("tr")], false);
+            calculateEventScores([...relayTable.querySelectorAll("tr")], true);
+
+            resultsTable.innerHTML = Object.entries(scores)
+                .map(([team, points]) => `<tr><td>${team}</td><td>${points}</td></tr>`)
+                .join("");
+        }
+
+        function updateTeams() {
+            const selectedScoringSystem = scoringSystemSelect.value;
+            const teams = TEAMS[selectedScoringSystem];
+            const numPlaces = Object.keys(SCORING_SYSTEMS[selectedScoringSystem]).length;
+
+            createEventRows(INDIVIDUAL_EVENTS, individualTable, teams, numPlaces);
+            createEventRows(RELAY_EVENTS, relayTable, teams, numPlaces);
+        }
+
+        scoringSystemSelect.addEventListener("change", () => {
+            updateTeams();
+            calculateScores();
+        });
+
+        document.addEventListener("change", calculateScores);
+
+        // Initialize the tables with the default scoring system
+        updateTeams();
+    </script>
+</body>
+</html>

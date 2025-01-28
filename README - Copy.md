@@ -1,2 +1,0 @@
-# SwimSitePro
- swimming data site

@@ -1,6 +1,6 @@
 // Constants for men and women
 const constants = {
-    men: {
+    MEN: {
         "50 Free": { a: -0.0001121071, b: 0.061821918, c: 19.44 },
         "100 Free": { a: -0.0002517676, b: 0.136744618, c: 42.89 },
         "200 Free": { a: -0.0005572378, b: 0.300618098, c: 94.19 },
@@ -17,7 +17,7 @@ const constants = {
         "200 IM": { a: -0.000619045, b: 0.333775378, c: 104.59 },
         "400 IM": { a: -0.0013423081, b: 0.721779318, c: 226.09 }
     },
-    women: {
+    WOMEN: {
         "50 Free": { a: -0.0001262429, b: 0.0710661, c: 22.1374875 },
         "100 Free": { a: -0.0002810849, b: 0.1546441, c: 48.277351 },
         "200 Free": { a: -0.0006155909, b: 0.3351981, c: 104.746998 },
@@ -62,13 +62,13 @@ document.getElementById("power-index-form").addEventListener("submit", function 
     const discriminant = Math.pow(b, 2) - 4 * a * (c - inputTime);
 
     if (discriminant < 0) {
-        document.getElementById("result").innerText = `No real solution for ${selectedEvent} (${gender}) with time ${inputTime.toFixed(2)} seconds.`;
+        document.getElementById("result").innerText = `NO REAL SOLUTION FOR ${selectedEvent} (${gender}) WITH TIME ${inputTime.toFixed(2)} SECONDS.`;
         return;
     }
 
     const xValue = (-b + Math.sqrt(discriminant)) / (2 * a);
 
-    document.getElementById("result").innerText = `Result for ${selectedEvent} (${gender}): Power Index = ${xValue.toFixed(2)}`;
+    document.getElementById("result").innerText = `RESULT FOR ${selectedEvent} (${gender}): POWER INDEX = ${xValue.toFixed(2)}`;
 
     triggerConfetti();
 });
