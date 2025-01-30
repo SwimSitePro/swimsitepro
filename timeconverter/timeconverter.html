@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <title>SwimSitePro</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="timeconverter.css">
+
+    <header style="background-color: lightblue;">
+        <h1 style="color: #102a3f;">SwimSitePro</h1>
+        <a href="../index.html">HOME</a>
+        <a href="https://www.instagram.com/swimsitepro/" target=”_blank”>INSTAGRAM</a>
+        ///
+        <a href="https://www.swimcloud.com/" target=”_blank”>SWIMCLOUD</a>
+        <hr>
+    </header>
+    
+    
+
+</head>
+<body class="timeconverter">
+    <div class="form-container"></div>
+        <h1>SWIM TIME CONVERTER</h1>
+        <p>CONVERT SWIMMING TIMES BETWEEN LCM AND SCY USING RECORD RATIOS.</p>
+
+        <label for="gender">SELECT GENDER:</label>
+        <select id="gender">
+            <option value="men">MEN</option>
+            <option value="women">WOMEN</option>
+        </select>
+
+        <br>
+
+        <label for="ageGroup">SELECT AGE GROUP:</label>
+        <select id="ageGroup">
+            <option value="open">OPEN</option>
+            <option value="17-18">17-18</option>
+            <option value="15-16">15-16</option>
+            <option value="13-14">13-14</option>
+            <option value="11-12">11-12</option>
+        </select>
+
+        <br>
+
+        <label for="event">SELECT EVENT:</label>
+        <select id="event">
+            <option value="50">50 FREE</option>
+            <option value="100">100 FREE</option>
+            <option value="200">200 FREE</option>
+            <option value="500">500/400 FREE</option>
+            <option value="1000">1000/800 FREE</option>
+            <option value="1650">1650/1500 FREE</option>
+            <option value="50back">50 BACK</option>
+            <option value="100back">100 BACK</option>
+            <option value="200back">200 BACK</option>
+            <option value="50breast">50 BREAST</option>
+            <option value="100breast">100 BREAST</option>
+            <option value="200breast">200 BREAST</option>
+            <option value="50fly">50 FLY</option>
+            <option value="100fly">100 FLY</option>
+            <option value="200fly">200 FLY</option>
+            <option value="200im">200 IM</option>
+            <option value="400im">400 IM</option>
+        </select>
+
+        <br>
+        <br>
+
+        <label>ENTER TIME (MM:SS.mm):</label>
+        <br>
+        <input type="number" id="minutes" class="time-input" placeholder="MM" min="0">
+        <input type="number" id="seconds" class="time-input" placeholder="SS" min="0" max="59">
+        <input type="number" id="milliseconds" class="time-input" placeholder="mm" min="0" max="99">
+
+        <br>
+
+        <label for="conversionType">CONVERSION TYPE:</label>
+        <select id="conversionType">
+            <option value="toLCM">SCY to LCM</option>
+            <option value="toSCY">LCM to SCY</option>
+        </select>
+
+        <br>
+
+        <button onclick="convertTime()">CONVERT</button>
+
+        <h2 id="result"></h2>
+    </div>    
+    <script>
+        const worldRecords = {
+            "men": {
+                "open": {
+                    "50": { "scy": 17.63, "lcm": 20.91 },
+                    "100": { "scy": 39.90, "lcm": 46.86 },
+                    "200": { "scy": 89.15, "lcm": 102.00 },
+                    "500": { "scy": 246.32, "lcm": 220.07 },
+                    "1000": { "scy": 513.93, "lcm": 452.12 },
+                    "1650": { "scy": 852.08, "lcm": 871.02 },
+                    "50back": { "scy": 20.87, "lcm": 24.00 },
+                    "100back": { "scy": 43.35, "lcm": 51.60 },
+                    "200back": { "scy": 95.73, "lcm": 111.92 },
+                    "50breast": { "scy": 22.61, "lcm": 25.95 },
+                    "100breast": { "scy": 49.28, "lcm": 56.88 },
+                    "200breast": { "scy": 107.91, "lcm": 125.95 },
+                    "50fly": { "scy": 19.01, "lcm": 22.27 },
+                    "100fly": { "scy": 42.80, "lcm": 49.45 },
+                    "200fly": { "scy": 97.35, "lcm": 110.34 },
+                    "200im": { "scy": 96.42, "lcm": 114.00 },
+                    "400im": { "scy": 213.42, "lcm": 243.84 }
+                },
+                "11-12": {
+                    "50": { "scy": 20.83, "lcm": 23.67 },
+                    "100": { "scy": 45.61, "lcm": 51.71 },
+                    "200": { "scy": 99.10, "lcm": 112.85 },
+                    "500": { "scy": 265.62, "lcm": 236.46 },
+                    "1000": { "scy": 550.77, "lcm": 484.79 },
+                    "1650": { "scy": 903.31, "lcm": 920.48 },
+                    "50back": { "scy": 23.27, "lcm": 26.98 },
+                    "100back": { "scy": 49.26, "lcm": 57.45 },
+                    "200back": { "scy": 107.24, "lcm": 123.35 },
+                    "50breast": { "scy": 25.56, "lcm": 29.30 },
+                    "100breast": { "scy": 55.73, "lcm": 64.13 },
+                    "200breast": { "scy": 123.18, "lcm": 138.95 },
+                    "50fly": { "scy": 21.75, "lcm": 24.43 },
+                    "100fly": { "scy": 49.75, "lcm": 54.59 },
+                    "200fly": { "scy": 109.51, "lcm": 121.81 },
+                    "200im": { "scy": 110.08, "lcm": 126.12 },
+                    "400im": { "scy": 238.46, "lcm": 266.36 }
+                },
+                "13-14": {
+                    "50": { "scy": 20.83, "lcm": 23.67 },
+                    "100": { "scy": 45.61, "lcm": 51.71 },
+                    "200": { "scy": 99.10, "lcm": 112.85 },
+                    "500": { "scy": 265.62, "lcm": 236.46 },
+                    "1000": { "scy": 550.77, "lcm": 484.79 },
+                    "1650": { "scy": 903.31, "lcm": 920.48 },
+                    "50back": { "scy": 23.27, "lcm": 26.98 },
+                    "100back": { "scy": 49.26, "lcm": 57.45 },
+                    "200back": { "scy": 107.24, "lcm": 123.35 },
+                    "50breast": { "scy": 25.56, "lcm": 29.30 },
+                    "100breast": { "scy": 55.73, "lcm": 64.13 },
+                    "200breast": { "scy": 123.18, "lcm": 138.95 },
+                    "50fly": { "scy": 21.75, "lcm": 24.43 },
+                    "100fly": { "scy": 49.75, "lcm": 54.59 },
+                    "200fly": { "scy": 109.51, "lcm": 121.81 },
+                    "200im": { "scy": 110.08, "lcm": 126.12 },
+                    "400im": { "scy": 238.46, "lcm": 266.36 }
+                },
+                "15-16": {
+                    "50": { "scy": 20.83, "lcm": 23.67 },
+                    "100": { "scy": 45.61, "lcm": 51.71 },
+                    "200": { "scy": 99.10, "lcm": 112.85 },
+                    "500": { "scy": 265.62, "lcm": 236.46 },
+                    "1000": { "scy": 550.77, "lcm": 484.79 },
+                    "1650": { "scy": 903.31, "lcm": 920.48 },
+                    "50back": { "scy": 23.27, "lcm": 26.98 },
+                    "100back": { "scy": 49.26, "lcm": 57.45 },
+                    "200back": { "scy": 107.24, "lcm": 123.35 },
+                    "50breast": { "scy": 25.56, "lcm": 29.30 },
+                    "100breast": { "scy": 55.73, "lcm": 64.13 },
+                    "200breast": { "scy": 123.18, "lcm": 138.95 },
+                    "50fly": { "scy": 21.75, "lcm": 24.43 },
+                    "100fly": { "scy": 49.75, "lcm": 54.59 },
+                    "200fly": { "scy": 109.51, "lcm": 121.81 },
+                    "200im": { "scy": 110.08, "lcm": 126.12 },
+                    "400im": { "scy": 238.46, "lcm": 266.36 }
+                },
+                "17-18": {
+                    "50": { "scy": 20.83, "lcm": 23.67 },
+                    "100": { "scy": 45.61, "lcm": 51.71 },
+                    "200": { "scy": 99.10, "lcm": 112.85 },
+                    "500": { "scy": 265.62, "lcm": 236.46 },
+                    "1000": { "scy": 550.77, "lcm": 484.79 },
+                    "1650": { "scy": 903.31, "lcm": 920.48 },
+                    "50back": { "scy": 23.27, "lcm": 26.98 },
+                    "100back": { "scy": 49.26, "lcm": 57.45 },
+                    "200back": { "scy": 107.24, "lcm": 123.35 },
+                    "50breast": { "scy": 25.56, "lcm": 29.30 },
+                    "100breast": { "scy": 55.73, "lcm": 64.13 },
+                    "200breast": { "scy": 123.18, "lcm": 138.95 },
+                    "50fly": { "scy": 21.75, "lcm": 24.43 },
+                    "100fly": { "scy": 49.75, "lcm": 54.59 },
+                    "200fly": { "scy": 109.51, "lcm": 121.81 },
+                    "200im": { "scy": 110.08, "lcm": 126.12 },
+                    "400im": { "scy": 238.46, "lcm": 266.36 }
+                }
+            },
+            "women": {
+                "open": {
+                    "50": { "scy": 20.83, "lcm": 23.67 },
+                    "100": { "scy": 45.61, "lcm": 51.71 },
+                    "200": { "scy": 99.10, "lcm": 112.85 },
+                    "500": { "scy": 265.62, "lcm": 236.46 },
+                    "1000": { "scy": 550.77, "lcm": 484.79 },
+                    "1650": { "scy": 903.31, "lcm": 920.48 },
+                    "50back": { "scy": 23.27, "lcm": 26.98 },
+                    "100back": { "scy": 49.26, "lcm": 57.45 },
+                    "200back": { "scy": 107.24, "lcm": 123.35 },
+                    "50breast": { "scy": 25.56, "lcm": 29.30 },
+                    "100breast": { "scy": 55.73, "lcm": 64.13 },
+                    "200breast": { "scy": 123.18, "lcm": 138.95 },
+                    "50fly": { "scy": 21.75, "lcm": 24.43 },
+                    "100fly": { "scy": 49.75, "lcm": 54.59 },
+                    "200fly": { "scy": 109.51, "lcm": 121.81 },
+                    "200im": { "scy": 110.08, "lcm": 126.12 },
+                    "400im": { "scy": 238.46, "lcm": 266.36 }
+                },
+                "11-12": {
+                    "50": { "scy": 22.33, "lcm": 25.67 },
+                    "100": { "scy": 48.99, "lcm": 55.12 },
+                    "200": { "scy": 105.45, "lcm": 118.30 },
+                    "500": { "scy": 275.89, "lcm": 245.76 },
+                    "1000": { "scy": 570.21, "lcm": 505.88 },
+                    "1650": { "scy": 930.45, "lcm": 945.33 },
+                    "50back": { "scy": 25.02, "lcm": 28.77 },
+                    "100back": { "scy": 52.99, "lcm": 60.45 },
+                    "200back": { "scy": 112.45, "lcm": 128.65 },
+                    "50breast": { "scy": 27.14, "lcm": 30.90 },
+                    "100breast": { "scy": 58.65, "lcm": 67.23 },
+                    "200breast": { "scy": 129.21, "lcm": 145.78 },
+                    "50fly": { "scy": 23.89, "lcm": 26.45 },
+                    "100fly": { "scy": 53.55, "lcm": 58.99 },
+                    "200fly": { "scy": 115.22, "lcm": 128.44 },
+                    "200im": { "scy": 117.33, "lcm": 133.21 },
+                    "400im": { "scy": 250.45, "lcm": 278.65 }
+                },
+                "13-14": {
+                    "50": { "scy": 21.98, "lcm": 25.12 },
+                    "100": { "scy": 47.89, "lcm": 54.33 },
+                    "200": { "scy": 103.45, "lcm": 116.20 },
+                    "500": { "scy": 270.32, "lcm": 240.67 },
+                    "1000": { "scy": 560.10, "lcm": 495.55 },
+                    "1650": { "scy": 920.12, "lcm": 935.50 },
+                    "50back": { "scy": 24.78, "lcm": 28.21 },
+                    "100back": { "scy": 52.01, "lcm": 59.89 },
+                    "200back": { "scy": 110.78, "lcm": 126.99 },
+                    "50breast": { "scy": 26.75, "lcm": 30.32 },
+                    "100breast": { "scy": 58.12, "lcm": 66.45 },
+                    "200breast": { "scy": 128.45, "lcm": 144.32 },
+                    "50fly": { "scy": 23.56, "lcm": 26.01 },
+                    "100fly": { "scy": 52.99, "lcm": 58.32 },
+                    "200fly": { "scy": 113.78, "lcm": 127.23 },
+                    "200im": { "scy": 116.45, "lcm": 132.10 },
+                    "400im": { "scy": 248.56, "lcm": 276.45 }
+                },
+                "15-16": {
+                    "50": { "scy": 21.45, "lcm": 24.78 },
+                    "100": { "scy": 47.10, "lcm": 53.89 },
+                    "200": { "scy": 102.45, "lcm": 115.32 },
+                    "500": { "scy": 268.99, "lcm": 239.56 },
+                    "1000": { "scy": 558.33, "lcm": 492.89 },
+                    "1650": { "scy": 918.22, "lcm": 933.78 },
+                    "50back": { "scy": 24.45, "lcm": 27.90 },
+                    "100back": { "scy": 51.88, "lcm": 59.12 },
+                    "200back": { "scy": 110.22, "lcm": 126.01 },
+                    "50breast": { "scy": 26.32, "lcm": 29.98 },
+                    "100breast": { "scy": 57.89, "lcm": 65.89 },
+                    "200breast": { "scy": 127.99, "lcm": 143.99 },
+                    "50fly": { "scy": 23.12, "lcm": 25.78 },
+                    "100fly": { "scy": 52.10, "lcm": 57.89 },
+                    "200fly": { "scy": 112.89, "lcm": 126.56 },
+                    "200im": { "scy": 115.88, "lcm": 131.56 },
+                    "400im": { "scy": 247.45, "lcm": 275.33 }
+                },
+                "17-18": {
+                    "50": { "scy": 21.21, "lcm": 24.45 },
+                    "100": { "scy": 46.78, "lcm": 53.12 },
+                    "200": { "scy": 101.99, "lcm": 114.45 },
+                    "500": { "scy": 267.78, "lcm": 238.45 },
+                    "1000": { "scy": 555.88, "lcm": 490.32 },
+                    "1650": { "scy": 915.12, "lcm": 931.89 },
+                    "50back": { "scy": 24.12, "lcm": 27.45 },
+                    "100back": { "scy": 51.45, "lcm": 58.45 },
+                    "200back": { "scy": 109.78, "lcm": 125.45 },
+                    "50breast": { "scy": 25.98, "lcm": 29.65 },
+                    "100breast": { "scy": 57.12, "lcm": 65.32 },
+                    "200breast": { "scy": 126.89, "lcm": 143.12 },
+                    "50fly": { "scy": 22.89, "lcm": 25.45 },
+                    "100fly": { "scy": 51.78, "lcm": 57.12 },
+                    "200fly": { "scy": 111.99, "lcm": 125.78 },
+                    "200im": { "scy": 114.78, "lcm": 130.32 },
+                    "400im": { "scy": 246.32, "lcm": 273.89 }
+                }
+            }
+        };
+
+        function convertTime() {
+            const gender = document.getElementById("gender").value;
+            const ageGroup = document.getElementById("ageGroup").value;
+            const event = document.getElementById("event").value;
+            const minutes = parseInt(document.getElementById("minutes").value, 10) || 0;
+            const seconds = parseInt(document.getElementById("seconds").value, 10) || 0;
+            const milliseconds = parseInt(document.getElementById("milliseconds").value, 10) || 0;
+            const conversionType = document.getElementById("conversionType").value;
+            
+            const record = worldRecords[gender]?.[ageGroup]?.[event];
+
+            if (!record) {
+                document.getElementById("result").textContent = "Record data for this age group and event is unavailable.";
+                return;
+            }
+
+            if (seconds >= 60 || milliseconds >= 100) {
+                document.getElementById("result").textContent = "Please enter valid time values.";
+                return;
+            }
+
+            const totalTimeInSeconds = minutes * 60 + seconds + milliseconds / 100;
+
+            let convertedTime;
+            if (conversionType === "toLCM") {
+                convertedTime = record.lcm * (totalTimeInSeconds / record.scy);
+            } else {
+                convertedTime = record.scy * (totalTimeInSeconds / record.lcm);
+            }
+
+            const convertedMinutes = Math.floor(convertedTime / 60);
+            const remainingSeconds = convertedTime % 60;
+            const paddedSeconds = remainingSeconds.toFixed(2).padStart(5, '0');
+
+            document.getElementById("result").textContent = `Converted Time: ${convertedMinutes}:${paddedSeconds}`;
+        }
+    </script>
+</body>
+</html>
