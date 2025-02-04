@@ -1,34 +1,47 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #e7e7e7;
 }
-
-.form-container{
-    max-width: 600px;
-    margin: 80px auto;
+.form-container {
+    background-color: white;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block; /* Hidden by default */
+}
+.form-container h2 {
     text-align: center;
 }
-
-input, select, button {
-    margin: 10px;
+.form-container label {
+    font-weight: bold;
+}
+.form-container select,
+.form-container input[type="number"],
+.form-container input[type="submit"] {
+    width: 100%;
     padding: 10px;
-    width: 80%;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
 }
-
-.time-input {
-    width: 25%;
-    display: inline-block;
-}
-
-select {
-    width: 200px;
-}
-
-input {
-    width: 100px;
-}
-
 button {
-    width: 200px;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.time-input {
+    display: flex;
+    gap: 10px;
+}
+.time-input input {
+    width: calc(33% - 7px);
 }
 
 
