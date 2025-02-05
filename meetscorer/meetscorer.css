@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f4f4f4;
+}
+select {
+    width: 200px; /* Increased width for dropdowns */
+    padding: 5px;
+    box-sizing: border-box;
+}
+.controls {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7e7e7;
+}
+a:link {
+    color: #102a3f;
+}
+  
+/* visited link */
+a:visited {
+    color: #102a3f;
+}
+  
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+  
+/* selected link */
+a:active {
+    color: hotpink;
+}
