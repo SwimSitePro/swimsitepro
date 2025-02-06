@@ -14,3 +14,72 @@ a:hover {
 a:active {
     color: hotpink;
 }
+
+
+        /* Style for the unordered list and individual list items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Automatically fills the grid */
+            gap: 15px; /* Adds space between the boxes */
+            margin: 0;
+        }
+
+        li {
+            /* Optional: added a border to make each box stand out more */
+            border-radius: 5px;
+            display: flex; /* Enable flexbox for the list items to stretch vertically */
+            flex-direction: column; /* Align items vertically */
+        }
+
+        /* Style for the links to make them look like buttons/boxes */
+        .list a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-color: lightskyblue;
+            color: #0056b3;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid black; /* Match border color with background */
+            height: 100%;
+            min-height: 60px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        /* Hover effect */
+        .list a:hover {
+            background-color: #0056b3;
+            border-color: #0056b3; /* Change border color on hover */
+            color: white;
+        }
+
+        /* Style for the section headings */
+        p {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Style for the horizontal lines */
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 2px solid #ccc;
+        }
+
+        /* Optional: Style for the section headings to make them visually distinct */
+        .section-heading {
+            margin-top: 30px;
+            font-size: 1.6em;
+            text-transform: uppercase;
+            text-align: center;
+            color: #333;
+        }
