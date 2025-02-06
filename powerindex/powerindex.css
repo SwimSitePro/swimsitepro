@@ -7,7 +7,7 @@ body {
     padding: 20px;
     max-width: 500px;
     margin: 0 auto;
-    display: block; /* Hidden by default */
+    display: block; 
 }
 .form-container h2 {
     text-align: center;
@@ -39,18 +39,12 @@ body {
 a:link {
     color: #102a3f;
 }
-  
-/* visited link */
 a:visited {
     color: #102a3f;
 }
-  
-/* mouse over link */
 a:hover {
     color: hotpink;
 }
-  
-/* selected link */
 a:active {
     color: hotpink;
 }

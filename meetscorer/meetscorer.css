@@ -16,7 +16,7 @@ th {
     background-color: #f4f4f4;
 }
 select {
-    width: 200px; /* Increased width for dropdowns */
+    width: 200px;
     padding: 5px;
     box-sizing: border-box;
 }

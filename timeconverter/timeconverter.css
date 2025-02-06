@@ -7,7 +7,7 @@ body {
     padding: 20px;
     max-width: 500px;
     margin: 0 auto;
-    display: block; /* Hidden by default */
+    display: block; 
 }
 .form-container h2 {
     text-align: center;

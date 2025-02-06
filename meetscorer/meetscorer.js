@@ -78,5 +78,4 @@ scoringSystemSelect.addEventListener("change", () => {
 
 document.addEventListener("change", calculateScores);
 
-// Initialize the tables with the default scoring system
 updateTeams();

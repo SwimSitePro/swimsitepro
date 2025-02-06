@@ -43,7 +43,6 @@ function triggerConfetti() {
     });
 }
 
-// Handle form submission
 document.getElementById("power-index-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -53,7 +52,6 @@ document.getElementById("power-index-form").addEventListener("submit", function 
     const seconds = parseInt(document.getElementById("seconds").value) || 0;
     const milliseconds = parseInt(document.getElementById("milliseconds").value) || 0;
 
-    // Validate input
     if (!constants[gender] || !constants[gender][selectedEvent]) {
         document.getElementById("result").innerText = `ERROR.`;
         return;
@@ -65,7 +63,6 @@ document.getElementById("power-index-form").addEventListener("submit", function 
 
     const discriminant = Math.pow(b, 2) - 4 * a * (c - inputTime);
 
-    // Check if solution exists
     if (discriminant < 0) {
         document.getElementById("result").innerText = `NO REAL SOLUTION FOR ${selectedEvent} (${gender}) WITH TIME ${inputTime.toFixed(2)} SECONDS.`;
         return;
