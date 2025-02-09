@@ -127,7 +127,7 @@ hr {
     background-color: #2e2e2e;
     border-color: white;
     color: #ccc;
-    box-shadow: inset 0 0 24px rgb(158, 216, 252);
+    box-shadow: inset 0 0 24px white;
 }
 ul.list {
     list-style: none;
