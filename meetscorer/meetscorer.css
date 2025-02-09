@@ -7,9 +7,10 @@ th, td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: center;
+    background-color: gray;
 }
 th {
-    background-color: #f4f4f4;
+    background-color: gray;
 }
 select {
     width: 200px;
