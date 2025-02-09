@@ -15,7 +15,7 @@
     <div class="header">
         <div class="inner-header">
             <div class="logo-container">
-                <h1>SWIMSITEPRO<span>PRO</span></h1>
+                <h1>SWIMSITE<span>PRO</span></h1>
             </div>
 
             <ul class="navigation">
@@ -82,12 +82,23 @@
                 </div>
                 <br>
 
-                <label for="conversionType">CONVERSION TYPE:</label>
-                <select id="conversionType">
-                    <option value="toLCM">SCY to LCM</option>
-                    <option value="toSCY">LCM to SCY</option>
-                </select>
+                <label for="fromType">FROM:</label>
+                    <div class="course">
+                        <select id="fromType">
+                            <option value="scy">SCY</option>
+                            <option value="lcm">LCM</option>
+                            <option value="scm">SCM</option>
+                        </select>
+                    </div>
 
+                <label for="toType">TO:</label>
+                    <div class="course">
+                        <select id="toType">
+                            <option value="scy">SCY</option>
+                            <option value="lcm">LCM</option>
+                            <option value="scm">SCM</option>
+                        </select>
+                    </div>
                 <br>
 
                 <button type="submit" onclick="convertTime()">CONVERT</button>

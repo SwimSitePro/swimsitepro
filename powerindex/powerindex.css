@@ -12,13 +12,20 @@
     font-weight: bold;
 }
 .form-container select,
-.form-container input[type="number"],
+.form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
 .form-container input[type="submit"] {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     font-size: 16px;
     border: 1px solid #ccc;
+    background-color: rgb(84, 190, 255);
 }
 #result {
     font-size: 18px;

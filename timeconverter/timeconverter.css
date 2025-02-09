@@ -26,6 +26,7 @@ button {
     margin: 8px 0;
     font-size: 16px;
     border: 1px solid #ccc;
+    background-color: rgb(84, 190, 255);
 }
 #result {
     font-size: 18px;
@@ -39,6 +40,10 @@ button {
 .time-input input {
     width: calc(33% - 7px);
 }
+.course option {
+    width: calc(50%-7px);
+}
+
 
 
 

@@ -1,16 +1,20 @@
+body {
+    color: #ccc;
+}
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 th, td {
-    border: 1px solid #ccc;
+    border: 1px solid black;
     padding: 8px;
     text-align: center;
-    background-color: gray;
+    background-color: #ccc;
+    color: black;
 }
 th {
-    background-color: gray;
+    background-color: #ccc;
 }
 select {
     width: 200px;

@@ -1,18 +1,14 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 html, body {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
     background-color: #2e2e2e;
 }
-
-/* Header */
 .header {
     width: 100%;
     height: 80px;
@@ -21,97 +17,78 @@ html, body {
     background-color: black;
     padding: 0 20px;
 }
-
 .inner-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .logo-container h1 {
     color: #ccc;
     font-size: 32px;
     font-weight: 150;
 }
-
 .logo-container h1 span {
     font-weight: 800;
+    color: rgb(84, 190, 255); 
 }
-
-/* Navigation */
 .navigation {
     display: flex;
     align-items: center;
 }
-
 .navigation li {
     list-style: none;
     display: inline-block;
     margin: 0 15px;
 }
-
 .navigation a {
     text-decoration: none;
     color: #ccc;
     font-size: 14px;
     transition: color 0.3s ease-in-out;
 }
-
 .navigation a:hover {
-    color: lightskyblue;
+    color: rgb(84, 190, 255);
 }
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     .header {
         height: auto;
         padding: 10px;
     }
-
     .inner-header {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
     .logo-container {
         margin-bottom: 10px;
     }
-
     .navigation {
         flex-direction: column;
         align-items: center;
     }
-
     .navigation li {
         display: block;
         margin: 5px 0;
     }
-
     .logo-container h1 {
         font-size: 28px;
     }
 }
-
 @media (max-width: 480px) {
     .logo-container h1 {
         font-size: 24px;
     }
-
     .navigation a {
         font-size: 14px;
     }
 }
-
-/* Typography */
 p {
     font-size: 1.5em;
     font-weight: bold;
     margin: 20px 0 10px;
     text-align: center;
 }
-
 .section-heading {
     margin-top: 30px;
     font-size: 1.6em;
@@ -119,14 +96,11 @@ p {
     text-align: center;
     color: #ccc;
 }
-
 hr {
     margin: 20px 0;
     border: 0;
     border-top: 2px solid #ccc;
 }
-
-/* Button Styling */
 .button {
     display: flex;
     justify-content: center;
@@ -137,21 +111,24 @@ hr {
     color: #2e2e2e;
     text-align: center;
     text-decoration: none;
-    border: 2px solid black;
-    background: lightskyblue;
+    border: 2px solid rgb(84, 190, 255);
+    background: rgb(84, 190, 255);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     width: 100%;
 }
-
 .button:hover {
     background-color: #2e2e2e;
     border-color: white;
     color: #ccc;
     box-shadow: inset 0 0 16px white;
 }
-
-/* List Styles */
+.button:active {
+    background-color: #2e2e2e;
+    border-color: white;
+    color: #ccc;
+    box-shadow: inset 0 0 24px rgb(158, 216, 252);
+}
 ul.list {
     list-style: none;
     padding: 0;
@@ -160,14 +137,11 @@ ul.list {
     gap: 15px;
     margin: 15px;
 }
-
 ul.list li {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* Fix for links */
 .list a {
     display: block;
     width: 100%;

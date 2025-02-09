@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <title>SwimSitePro</title>
+    <link rel="stylesheet" href="powerindex2.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="powerindex2.js" defer></script>
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="inner-header">
+            <div class="logo-container">
+                <h1>SWIMSITE<span>PRO</span></h1>
+            </div>
+
+            <ul class="navigation">
+                <a href="../index.html"><li>HOME</li></a>
+                <a href="https://www.instagram.com/deswimrank/" target=”_blank”><li>INSTAGRAM</li></a>
+                <a href="https://www.swimcloud.com/" target=”_blank”><li>SWIMCLOUD</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="calculator">
+        <h2>Swimming Power Index Calculator</h2>
+        <div class="input-row">
+            <div class="input-group">
+                <label for="genderSelect">Gender:</label>
+                <select id="genderSelect" onchange="updateEvents()">
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="courseSelect">Course:</label>
+                <select id="courseSelect" onchange="updateEvents()">
+                    <option value="SCY">SCY</option>
+                    <option value="LCM">LCM</option>
+                    <option value="SCM">SCM</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="eventSelect">Event:</label>
+                <select id="eventSelect"></select>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="timeInput">Enter Time:</label>
+            <div class="time-input-row">
+                <input type="number" id="minutesInput" placeholder="MM" min="0" max="59" required>
+                <span>:</span>
+                <input type="number" id="secondsInput" placeholder="SS" min="0" max="59" required>
+                <span>.</span>
+                <input type="number" id="millisecondsInput" placeholder="mm" min="0" max="99" required>
+            </div>
+        </div>
+        <button onclick="calculatePowerIndex()">Calculate Score</button>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
