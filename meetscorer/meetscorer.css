@@ -23,4 +23,14 @@ select {
 }
 .controls {
     margin-bottom: 20px;
+    padding: 5px;
+    color: white;
+}
+h1 {
+    padding: 5px;
+    color: white;
+}
+h2 {
+    padding: 5px;
+    color: white;
 }

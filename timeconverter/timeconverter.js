@@ -1,23 +1,24 @@
 const worldRecords = { //USA SWIMMING RECORDS
     "men": {
         "open": { //CORRECTED
-            "50": { "scy": 17.63, "lcm": 21.04, "scm": null },
-            "100": { "scy": 39.90, "lcm": 46.96, "scm": null },
-            "200": { "scy": 88.81, "lcm": 102.96, "scm": null },
-            "500": { "scy": 244.45, "lcm": 222.78, "scm": null },
-            "1000": { "scy": 513.93, "lcm": 458.67, "scm": null },
-            "1650": { "scy": 852.08, "lcm": 870.67, "scm": null },
-            "50back": { "scy": null, "lcm": null, "scm": null },
-            "100back": { "scy": 43.35, "lcm": 51.85, "scm": null },
-            "200back": { "scy": 95.37, "lcm": 111.92, "scm": null },
-            "50breast": { "scy": null, "lcm": null, "scm": null },
-            "100breast": { "scy": 49.53, "lcm": 58.14, "scm": null },
-            "200breast": { "scy": 107.91, "lcm": 126.54, "scm": null },
-            "50fly": { "scy": null, "lcm": null, "scm": null },
-            "100fly": { "scy": 42.80, "lcm": 49.45, "scm": null },
-            "200fly": { "scy": 97.17, "lcm": 111.51, "scm": null },
-            "200im": { "scy": 97.91, "lcm": 114.00, "scm": null },
-            "400im": { "scy": 213.42, "lcm": 243.84, "scm": null }
+            "50": { "scy": 17.63, "lcm": 21.04, "scm": 20.16 },
+            "100": { "scy": 39.90, "lcm": 46.96, "scm": 45.05 },
+            "200": { "scy": 88.81, "lcm": 102.96, "scm": 98.61 },
+            "500": { "scy": 244.45, "lcm": 222.78, "scm": 214.38 },
+            "1000": { "scy": 513.93, "lcm": 458.67, "scm": 450.41 },
+            "1650": { "scy": 852.08, "lcm": 870.67, "scm": 859.29 },
+            "50back": { "scy": null, "lcm": 23.71, "scm": 22.53 },
+            "100back": { "scy": 43.35, "lcm": 51.85, "scm": 48.33 },
+            "200back": { "scy": 95.37, "lcm": 111.92, "scm": 106.68 },
+            "50breast": { "scy": null, "lcm": 26.45, "scm": 25.38 },
+            "100breast": { "scy": 49.53, "lcm": 58.14, "scm": 55.56 },
+            "200breast": { "scy": 107.91, "lcm": 126.54, "scm": 121.60 },
+            "50fly": { "scy": null, "lcm": 22.35, "scm": 21.99 },
+            "100fly": { "scy": 42.80, "lcm": 49.45, "scm": 47.78 },
+            "200fly": { "scy": 97.17, "lcm": 111.51, "scm": 108.66 },
+            "100im": { "scy": null, "lcm": null, "scm": 49.28 },
+            "200im": { "scy": 97.91, "lcm": 114.00, "scm": 109.51 },
+            "400im": { "scy": 213.42, "lcm": 243.84, "scm": 235.50 }
         },
         "11-12": { //CORRECTED  
             "50": {"scy": 21.50, "lcm": 24.98, "scm": null },
@@ -35,6 +36,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": 22.87, "lcm": 26.22, "scm": null },
             "100fly": { "scy": 50.82, "lcm": 58.74, "scm": null },
             "200fly": { "scy": 113.66, "lcm": 131.07, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 115.75, "lcm": 133.59, "scm": null },
             "400im": { "scy": 247.81, "lcm": 282.54, "scm": null }
         },
@@ -54,6 +56,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": 21.28, "lcm": 25.26, "scm": null },
             "100fly": { "scy": 45.81, "lcm": 53.27, "scm": null },
             "200fly": { "scy": 102.77, "lcm": 119.02, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 105.29, "lcm": 123.73, "scm": null },
             "400im": { "scy": 227.91, "lcm": 264.20, "scm": null }
         },
@@ -73,6 +76,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": null, "lcm": null, "scm": null },
             "100fly": { "scy": 44.67, "lcm": 51.19, "scm": null },
             "200fly": { "scy": 100.73, "lcm": 113.82, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 101.41, "lcm": 118.65, "scm": null },
             "400im": { "scy": 219.83, "lcm": 254.73, "scm": null }
         },
@@ -92,6 +96,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": null, "lcm": null, "scm": null },
             "100fly": { "scy": 43.86, "lcm": 50.80, "scm": null },
             "200fly": { "scy": 98.95, "lcm": 113.84, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 100.81, "lcm": 115.94, "scm": null },
             "400im": { "scy": 215.27, "lcm": 249.09, "scm": null }
         },
@@ -99,23 +104,24 @@ const worldRecords = { //USA SWIMMING RECORDS
 
     "women": {
         "open": { //CORRECTED
-            "50": { "scy": 20.37, "lcm": 23.91, "scm": null },
-            "100": { "scy": 44.83, "lcm": 52.04, "scm": null },
-            "200": { "scy": 99.10, "lcm": 113.61, "scm": null },
-            "500": { "scy": 264.06, "lcm": 236.46, "scm": null },
-            "1000": { "scy": 539.65, "lcm": 484.79, "scm": null },
-            "1650": { "scy": 901.41, "lcm": 920.48, "scm": null },
-            "50back": { "scy": null, "lcm": null, "scm": null },
-            "100back": { "scy": 48.10, "lcm": 57.13, "scm": null },
-            "200back": { "scy": 106.87, "lcm": 123.35, "scm": null },
-            "50breast": { "scy": null, "lcm": null, "scm": null },
-            "100breast": { "scy": 55.73, "lcm": 64.13, "scm": null },
-            "200breast": { "scy": 121.29, "lcm": 139.24, "scm": null },
-            "50fly": { "scy": null, "lcm": null, "scm": null },
-            "100fly": { "scy": 47.35, "lcm": 55.18, "scm": null },
-            "200fly": { "scy": 108.33, "lcm": 123.84, "scm": null },
-            "200im": { "scy": 108.37, "lcm": 126.15, "scm": null },
-            "400im": { "scy": 234.60, "lcm": 271.12, "scm": null }
+            "50": { "scy": 20.37, "lcm": 23.91, "scm": 22.83 },
+            "100": { "scy": 44.83, "lcm": 52.04, "scm": 50.31 },
+            "200": { "scy": 99.10, "lcm": 113.61, "scm": 111.62 },
+            "500": { "scy": 264.06, "lcm": 236.46, "scm": 232.88 },
+            "1000": { "scy": 539.65, "lcm": 484.79, "scm": 477.42 },
+            "1650": { "scy": 901.41, "lcm": 920.48, "scm": 908.24 },
+            "50back": { "scy": null, "lcm": 27.10, "scm": 25.23 },
+            "100back": { "scy": 48.10, "lcm": 57.13, "scm": 54.02 },
+            "200back": { "scy": 106.87, "lcm": 123.35, "scm": 118.04 },
+            "50breast": { "scy": null, "lcm": 29.40, "scm": 28.77 },
+            "100breast": { "scy": 55.73, "lcm": 64.13, "scm": 62.50 },
+            "200breast": { "scy": 121.29, "lcm": 139.24, "scm": 132.50 },
+            "50fly": { "scy": null, "lcm": 25.11, "scm": 23.94 },
+            "100fly": { "scy": 47.35, "lcm": 55.18, "scm": 52.71 },
+            "200fly": { "scy": 108.33, "lcm": 123.84, "scm": 121.00 },
+            "100im": { "scy": null, "lcm": null, "scm": 55.11 },
+            "200im": { "scy": 108.37, "lcm": 126.15, "scm": 121.63 },
+            "400im": { "scy": 234.60, "lcm": 271.12, "scm": 260.14 }
         },
         "11-12": { //CORRECTED
             "50": { "scy": 23.15, "lcm": 26.21, "scm": null },
@@ -133,6 +139,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": 24.39, "lcm": 27.91, "scm": null },
             "100fly": { "scy": 53.95, "lcm": 61.41, "scm": null },
             "200fly": { "scy": 120.00, "lcm": 135.02, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 123.23, "lcm": 138.69, "scm": null }, 
             "400im": { "scy": 258.99, "lcm": 290.70, "scm": null }
         },
@@ -152,6 +159,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": 23.98, "lcm": 26.18, "scm": null },
             "100fly": { "scy": 50.64, "lcm": 58.61, "scm": null },
             "200fly": { "scy": 114.33, "lcm": 127.01, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 115.73, "lcm": 132.53, "scm": null },
             "400im": { "scy": 246.95, "lcm": 279.76, "scm": null }
         },
@@ -171,6 +179,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": null, "lcm": null, "scm": null },
             "100fly": { "scy": 49.51, "lcm": 56.20, "scm": null },
             "200fly": { "scy": 111.24, "lcm": 125.96, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 113.38, "lcm": 128.91, "scm": null },
             "400im": { "scy": 237.02, "lcm": 272.67, "scm": null }
         },
@@ -190,6 +199,7 @@ const worldRecords = { //USA SWIMMING RECORDS
             "50fly": { "scy": null, "lcm": null, "scm": null },
             "100fly": { "scy": 49.24, "lcm": 55.66, "scm": null },
             "200fly": { "scy": 110.15, "lcm": 126.10, "scm": null },
+            "100im": { "scy": null, "lcm": null, "scm": null },
             "200im": { "scy": 111.36, "lcm": 129.01, "scm": null },
             "400im": { "scy": 236.59, "lcm": 271.41, "scm": null }
         },
