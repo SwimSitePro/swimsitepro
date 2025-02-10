@@ -1,6 +1,8 @@
 .form-container {
     background-color: #ccc;
-    padding: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     max-width: 500px;
     margin: 0 auto;
     display: block; 
@@ -40,8 +42,12 @@ button {
 .time-input input {
     width: calc(33% - 7px);
 }
-.course option {
-    width: calc(50%-7px);
+.course-container {
+    display: flex;
+    gap: 10px; 
+}
+.course-container .course {
+    width: 50%;
 }
 
 

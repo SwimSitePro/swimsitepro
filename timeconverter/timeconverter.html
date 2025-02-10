@@ -30,6 +30,7 @@
 
         <div class="form-container"></div>
             <h2>SWIM TIME CONVERTER</h2>
+            <hr>
 
             <label for="gender">SELECT GENDER:</label>
             <select id="gender">
@@ -37,7 +38,6 @@
                 <option value="women">WOMEN</option>
            </select>
 
-            <br>
 
             <label for="ageGroup">SELECT AGE GROUP:</label>
             <select id="ageGroup">
@@ -48,7 +48,6 @@
                 <option value="11-12">11-12</option>
             </select>
 
-            <br>
 
             <label for="event">SELECT EVENT:</label>
                 <select id="event">
@@ -71,8 +70,6 @@
                     <option value="400im">400 IM</option>
                 </select>
 
-                <br>
-                <br>
 
                 <label for="time">ENTER TIME:</label>
                 <div class="time-input">
@@ -80,9 +77,9 @@
                     <input type="number" id="seconds" name="seconds" placeholder="SS" required min="0" max="59">
                     <input type="number" id="milliseconds" name="milliseconds" placeholder="mm" required min="0" max="99">
                 </div>
-                <br>
 
-                <label for="fromType">FROM:</label>
+                <label>SELECT CONVERSION TYPE:</label>
+                <div class="course-container">
                     <div class="course">
                         <select id="fromType">
                             <option value="scy">SCY</option>
@@ -90,8 +87,7 @@
                             <option value="scm">SCM</option>
                         </select>
                     </div>
-
-                <label for="toType">TO:</label>
+                
                     <div class="course">
                         <select id="toType">
                             <option value="scy">SCY</option>
@@ -99,7 +95,7 @@
                             <option value="scm">SCM</option>
                         </select>
                     </div>
-                <br>
+                </div>
 
                 <button type="submit" onclick="convertTime()">CONVERT</button>
 
