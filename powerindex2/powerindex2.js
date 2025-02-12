@@ -169,12 +169,22 @@
 };
 
 function updateEvents() {
-    const gender = document.getElementById('genderSelect').value;
-    const course = document.getElementById('courseSelect').value;
-    const year = document.getElementById('yearSelect').value;
+    const genderSelect = document.getElementById('genderSelect');
+    const courseSelect = document.getElementById('courseSelect');
+    const yearSelect = document.getElementById('yearSelect');
     const eventSelect = document.getElementById('eventSelect');
-    
+
+    const gender = genderSelect.value;
+    const course = courseSelect.value;
+    const year = yearSelect.value;
+
+    // Store previous selection
+    const prevEvent = eventSelect.value;
+
+    // Clear current options
     eventSelect.innerHTML = '';
+
+    // Populate new event options
     const events = Object.keys(eventData[gender][course][year]);
     
     events.forEach(event => {
@@ -183,6 +193,11 @@ function updateEvents() {
         option.textContent = eventToName(event);
         eventSelect.appendChild(option);
     });
+
+    // Restore previous selection if still available
+    if (events.includes(prevEvent)) {
+        eventSelect.value = prevEvent;
+    }
 }
 
 function eventToName(abbr) {
