@@ -177,14 +177,10 @@ function updateEvents() {
     const gender = genderSelect.value;
     const course = courseSelect.value;
     const year = yearSelect.value;
-
-    // Store previous selection
     const prevEvent = eventSelect.value;
 
-    // Clear current options
     eventSelect.innerHTML = '';
 
-    // Populate new event options
     const events = Object.keys(eventData[gender][course][year]);
     
     events.forEach(event => {
@@ -194,7 +190,6 @@ function updateEvents() {
         eventSelect.appendChild(option);
     });
 
-    // Restore previous selection if still available
     if (events.includes(prevEvent)) {
         eventSelect.value = prevEvent;
     }
