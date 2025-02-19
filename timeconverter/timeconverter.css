@@ -11,7 +11,7 @@
     text-align: center;
 }
 .form-container label {
-    font-weight: bold;
+    font-weight: 600;
 }
 .form-container select,
 .form-container input[type="number"],
@@ -29,18 +29,20 @@ button {
     font-size: 16px;
     border: 2px solid #ccc;
     background-color: rgb(84, 190, 255);
+    color: black;
+    font-weight: 600;
 }
 button:hover {
     background-color: #2e2e2e;
     border-color: white;
-    color: #ccc;
-    box-shadow: inset 0 0 16px white;
+    color: white;
+    box-shadow: inset 0 0 10px white;
 }
 button:active {
     background-color: #2e2e2e;
     border-color: white;
-    color: #ccc;
-    box-shadow: inset 0 0 24px white;
+    color:  white;
+    box-shadow: inset 0 0 16px white;
 }
 #result {
     font-size: 18px;
@@ -64,6 +66,3 @@ button:active {
 .note {
     font-size: 14px;
 }
-
-
-
