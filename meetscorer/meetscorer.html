@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/images/logo.png">
-    <title>SwimSitePro</title>
+    <title>Swimming Meet Scorer</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="meetscorer.css">
-    <script src="meetscorer.js" defer></script>
 </head>
 <body>
-
     <div class="header">
         <div class="inner-header">
             <div class="logo-container">
@@ -24,53 +21,37 @@
             </ul>
         </div>
     </div>
-
-    <h1>DYNAMIC MEET SCORER</h1>
-    <div class="controls">
-        <label for="scoring-system">Select Scoring System:</label>
-        <select id="scoring-system">
-            <option value="4-lane">Dual Meet Scoring (4-lane)</option>
-            <option value="6-lane">Dual Meet Scoring (6-lane)</option>
-            <option value="8-lane">Dual Meet Scoring (8-lane)</option>
-            <option value="blue-hen">Blue Hen Conference</option>
-            <option value="disc">DISC</option>
-            <option value="diaa-state">DIAA State Scoring</option>
-        </select>
-    </div>
+    <h1>Swimming Meet Scorer</h1>
+    <label for="scoring-system">Scoring:</label>
+    <select id="scoring-system">
+        <option value="4-lane">4 Lane</option>
+        <option value="6-lane">6 Lane</option>
+        <option value="8-lane">8 Lane</option>
+        <option value="blue-hen">Blue Hen Conference</option>
+        <option value="disc">DISC</option>
+        <option value="diaa-state">DIAA State</option>
+        <option value="caa-men">CAA Men</option>
+        <option value="caa-women">CAA Women</option>
+    </select>
 
     <h2>Individual Events</h2>
     <table id="individual-events">
-        <thead>
-            <tr>
-                <th>Event</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
+        <thead><tr></tr></thead>
+        <tbody></tbody>
     </table>
 
     <h2>Relay Events</h2>
     <table id="relay-events">
-        <thead>
-            <tr>
-                <th>Event</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
+        <thead><tr></tr></thead>
+        <tbody></tbody>
     </table>
 
-    <h2>Team Scores</h2>
-    <table class="results" id="results">
-        <thead>
-            <tr>
-                <th>Team</th>
-                <th>Points</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-</table>
+    <h2>Results</h2>
+    <table id="results">
+        <thead><tr><th>Team</th><th>Points</th></tr></thead>
+        <tbody></tbody>
+    </table>
 
+    <script src="meetscorer.js"></script>
 </body>
 </html>
