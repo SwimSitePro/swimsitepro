@@ -34,12 +34,12 @@
             <div class="input-group">
                 <label for="yearSelect">SELECT YEAR:</label>
                 <select id="yearSelect" onchange="updateEvents()">
+                    <option value="2025">2025-26</option>
                     <option value="2024">2024-25</option>
                     <option value="2023">2023-24</option>
                     <option value="2022">2022-23</option>
                     <option value="2021">2021-22</option>
                     <option value="2020">2020-21</option>
-                    <option value="2025">2025-26 coming soon</option>
                 </select>
             </div>
 
@@ -56,7 +56,7 @@
                 <select id="courseSelect" onchange="updateEvents()">
                     <option value="SCY">SCY</option>
                     <option value="LCM">LCM</option>
-                    <option value="SCM">SCM [beta]</option>
+                    <option value="SCM">SCM</option>
                 </select>
             </div>
 
@@ -70,9 +70,9 @@
         <div class="input-group">
             <label for="timeInput">ENTER TIME:</label>
             <div class="time-input">
-                <input type="number" id="minutesInput" placeholder="MM" min="0" max="59" required>
-                <input type="number" id="secondsInput" placeholder="SS" min="0" max="59" required>
-                <input type="number" id="millisecondsInput" placeholder="mm" min="0" max="99" required>
+                <input type="number" id="minutesInput" placeholder="MM" required min="0">
+                <input type="number" id="secondsInput" placeholder="SS" required min="0" max="59">
+                <input type="number" id="millisecondsInput" placeholder="mm" required min="0" max="99">
             </div>
         </div>
 
